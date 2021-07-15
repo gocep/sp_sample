@@ -1,0 +1,201 @@
+<html lang="en">
+<head>
+
+  <title>Product details</title>  
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="single.css">
+  <script type="text/javascript">
+   ;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[]; p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments) };p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1; n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","sp.js","snowplow"));
+
+
+      window.snowplow("newTracker", "goce", "http://localhost:9090", {
+        // Initialise a tracker
+        encodeBase64: false,
+        appId: "gocetest",
+        platform: "web",
+        discoverRootDomain: true,
+        contexts: {
+          webPage: true,
+        },
+      });
+
+      window.snowplow("setUserId", "tester");
+      window.snowplow("enableActivityTracking", 10, 10); // Ping every 10 seconds after 10 seconds     
+      window.snowplow("enableFormTracking");
+      window.snowplow("trackPageView");
+    </script>
+</head>
+
+<body translate="no">
+ <!-- Nav -->
+ <nav class="navbar navbar-inverse bg-inverse fixed-top bg-faded">
+    <div class="row">
+        <div class="col">
+        <a href="index.html" class="btn btn-inverse">Shop</a>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span class="total-count">9</span>)</button>
+          <button class="clear-cart btn btn-danger">Clear Cart</button></div>
+    </div>
+</nav>
+<div class="container">
+<div class = "card-wrapper">
+  <div class = "card">
+    <!-- card left -->
+    <div class = "product-imgs">
+      <div class = "img-display">
+        <div class = "img-showcase">
+          <img src = "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/dxhg7rkligh9pitjbhtc" alt = "shoe image">
+        </div>
+      </div>     
+    </div>
+    <!-- card right -->
+    <div class = "product-content">
+      <h2 class = "product-title" data-name="SnowplowProduct1">Snowplow Product 1</h2>
+     
+      <div class = "product-rating">
+        <i class = "fas fa-star"></i>
+        <i class = "fas fa-star"></i>
+        <i class = "fas fa-star"></i>
+        <i class = "fas fa-star"></i>
+        <i class = "fas fa-star-half-alt"></i>
+        <span>4.7(21)</span>
+      </div>
+
+      <div class = "product-price" data-price="249">
+        <p class = "last-price">Old Price: <span>$257.00</span></p>
+        <p class = "new-price">New Price: <span>$249.00 (5%)</span></p>
+      </div>
+
+      <div class = "product-detail">
+        <h2>about this item: </h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga tenetur placeat sapiente architecto illum soluta consequuntur, aspernatur quidem at sequi ipsa!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, perferendis eius. Dignissimos, labore suscipit. Unde.</p>
+       
+      </div>
+
+      <div class = "purchase-info">       
+        <button type = "button" class = "btn" onclick="singleAddCart()">
+          Add to Cart <i class = "fas fa-shopping-cart"></i>
+        </button>      
+      </div>
+
+      <div class = "social-links">
+        <p>Share At: </p>
+        <a href = "#" data-type="facebook">
+          <i class = "fab fa-facebook-f"></i>
+        </a>
+        <a href = "#" data-type="twitter">
+          <i class = "fab fa-twitter"></i>
+        </a>
+        <a href = "#" data-type="instagram">
+          <i class = "fab fa-instagram"></i>
+        </a>
+        <a href = "#" data-type="whatsapp">
+          <i class = "fab fa-whatsapp"></i>
+        </a>
+        <a href = "#" data-type="pinterest">
+          <i class = "fab fa-pinterest"></i>
+        </a>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="container"><div class="row">
+  <h3 style="width:100%">Related Products</h3>
+      <div class="br-sf-widget">
+      <div class="br-sf-widget-merchant-cont">
+        <div class="br-sf-widget-merchant-img">
+          <img src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/dxhg7rkligh9pitjbhtc">
+        </div>
+        <div class="br-sf-widget-merchant-title">
+          <a href="#">Test 1</a>
+        </div>
+        <div class="br-sf-widget-merchant-desc">
+          Features: ...
+        </div>
+        <div class="br-sf-widget-merchant-qv">
+            <a href="javascript:void(0);" onclick="viewRelatedProduct('test1')">More Details</a>
+        </div>
+   
+      </div>    
+      <div class="br-sf-widget-merchant-cont">
+        <div class="br-sf-widget-merchant-img">
+          <img src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/dxhg7rkligh9pitjbhtc">
+        </div>
+        <div class="br-sf-widget-merchant-title">
+          <a href="#">Test 3</a>
+        </div>
+        <div class="br-sf-widget-merchant-desc">
+          Features: ...
+        </div>
+        <div class="br-sf-widget-merchant-qv">
+        <a href="javascript:void(0);" onclick="viewRelatedProduct('test2')">More Details</a>
+        </div>
+      </div>
+      <div class="br-sf-widget-merchant-cont">
+        <div class="br-sf-widget-merchant-img">
+          <img src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/dxhg7rkligh9pitjbhtc">
+        </div>
+        <div class="br-sf-widget-merchant-title">
+          <a href="#">Test 2</a>
+        </div>
+        <div class="br-sf-widget-merchant-desc">
+          Features: ...
+        </div>
+        <div class="br-sf-widget-merchant-qv">
+        <a href="javascript:void(0);" onclick="viewRelatedProduct('test3')">More Details</a>
+        </div>
+      </div>  
+      
+     </div>
+      <!-- Modal -->
+    <div
+      class="modal fade"
+      id="cart"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      style="display: none"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <table class="show-cart table">             
+            </table>
+            <div>Total price: $<span class="total-cart"></span></div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" onclick="order()" class="btn btn-primary">Order now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+     <script src="app.js"></script> 
+</body>
+</html>

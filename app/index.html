@@ -1,0 +1,179 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Sample Snowplow App</title>
+    <link rel="stylesheet" href="app.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+      integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+      integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+      integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+      integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+      crossorigin="anonymous"
+    ></script>
+   
+    <script type="text/javascript">
+   ;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[]; p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments) };p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1; n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","sp.js","snowplow"));
+
+
+      window.snowplow("newTracker", "goce", "http://localhost:9090", {
+        // Initialise a tracker
+        encodeBase64: false,
+        appId: "gocetest",
+        platform: "web",
+        discoverRootDomain: true,
+        contexts: {
+          webPage: true,
+        },
+      });
+
+      window.snowplow("setUserId", "tester");
+      window.snowplow("enableActivityTracking", 10, 10); // Ping every 10 seconds after 10 seconds     
+      window.snowplow("enableFormTracking");
+      window.snowplow("trackPageView");
+    </script>
+  </head>
+
+  <body translate="no" class="" style="">
+    <!-- Nav -->
+    <nav class="navbar navbar-inverse bg-inverse fixed-top bg-faded">
+      <div class="row">
+        <div class="col">
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#cart"
+          >
+            Cart (<span class="total-count">9</span>)</button
+          ><button class="clear-cart btn btn-danger">Clear Cart</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main -->
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card" style="width: 20rem">
+            <img
+              class="card-img-top"
+              src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/dxhg7rkligh9pitjbhtc"
+              alt="Card image cap"
+            />
+            <div class="card-block">
+              <h4 class="card-title">
+                <a href="single.html">Snowplow Product 1</a>
+              </h4>
+              <p class="card-text">Price: $0.5</p>
+              <a
+                href="#"
+                data-name="SnowplowProduct1"
+                data-price="0.5"
+                class="add-to-cart btn btn-primary"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 20rem">
+            <img
+              class="card-img-top"
+              src="https://avatars.githubusercontent.com/u/1476001?s=280&v=4"
+              alt="Card image cap"
+            />
+            <div class="card-block">
+              <h4 class="card-title"> <a href="single.html">Snowplow Product 2</a></h4>
+              <p class="card-text">Price: $1.22</p>
+              <a
+                href="#"
+                data-name="SnowplowProduct2"
+                data-price="1.22"
+                class="add-to-cart btn btn-primary"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 20rem">
+            <img
+              class="card-img-top"
+              src="https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_0147b80500a398e023da7a702a2389be/snowplow-analytics.png"
+              alt="Card image cap"
+            />
+            <div class="card-block">
+              <h4 class="card-title"> <a href="single.html">Snowplow Product 3</a></h4>
+              <p class="card-text">Price: $5</p>
+              <a
+                href="#"
+                data-name="SnowplowProduct3"
+                data-price="5"
+                class="add-to-cart btn btn-primary"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="cart"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      style="display: none"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <table class="show-cart table">             
+            </table>
+            <div>Total price: $<span class="total-cart"></span></div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Order now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
